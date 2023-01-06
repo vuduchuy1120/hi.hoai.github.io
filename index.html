@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="typeWriter()" class="show-text">Click me</button>
+
+  <p id="demo"></p>
+  <button onclick="showImg()" id="show" style="display: none;">Click me </button>
+  <div id="imgSorry" style="display: none;">
+    <img src="/sorry.jfif" alt="">
+  </div>
+  <script>
+    var i = 0;
+
+    var txt = 'Hi, Đây là một tin nhắn cực kỳ quan trọng. Website này sinh ra với một mục đích duy nhất. Đó chính là, gửi lời xin lỗi chân thành đến bông hoa xinh đang xem những dòng tin nhắn này. Cho Huy xin lỗi nhé. Xin lỗi Hoài rất nhiều =((';
+    var speed = 20;
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+      else {
+        document.getElementById('show').style.display = 'block';
+      }
+
+    }
+    function showImg() {
+      document.getElementById('imgSorry').style.display = 'block';
+    }
+  </script>
+
+</body>
+</body>
+
+</html>
